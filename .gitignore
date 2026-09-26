@@ -1,0 +1,2 @@
+# Neovim may write this when launched from the repository root.
+nvim.log

@@ -1,0 +1,27 @@
+# Local/editor state
+.neoconf.json
+*.swp
+*.swo
+Session.vim
+
+# Runtime/build output
+*.log
+luac.out
+*.src.rock
+*.zip
+*.tar.gz
+*.o
+*.so
+*.so.*
+*.dll
+*.dylib
+*.exe
+
+# Neovim test/repro artifacts
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+data
