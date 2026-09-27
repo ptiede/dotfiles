@@ -1,0 +1,4 @@
+[submodule "claude/.claude"]
+	path = claude/.claude
+	url = https://github.com/ptiede/claude_config.git
+	branch = main

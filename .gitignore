@@ -1,2 +1,39 @@
 # Neovim may write this when launched from the repository root.
 nvim.log
+
+# Claude Code: keep portable prompts, agents, hooks, rules, and helpers;
+# exclude credentials and machine/session-generated state.
+claude/.claude/.git/
+claude/.claude/.credentials.json
+claude/.claude/.last-cleanup
+claude/.claude/.last-update-result.json
+claude/.claude/daemon.log
+claude/.claude/history.jsonl
+claude/.claude/settings.json
+claude/.claude/mcp-needs-auth-cache.json
+claude/.claude/stats-cache.json
+claude/.claude/backups/
+claude/.claude/cache/
+claude/.claude/daemon/
+claude/.claude/debug/
+claude/.claude/downloads/
+claude/.claude/file-history/
+claude/.claude/ide/
+claude/.claude/jobs/
+claude/.claude/paste-cache/
+claude/.claude/plans/
+claude/.claude/plugins/synced/
+claude/.claude/projects/
+claude/.claude/session-env/
+claude/.claude/sessions/
+claude/.claude/shell-snapshots/
+claude/.claude/state/
+claude/.claude/tasks/
+claude/.claude/telemetry/
+claude/.claude/todos/
+claude/.claude/skills/synced/
+claude/.claude/julia-code/**/Manifest.toml
+claude/.claude/julia-code/**/Manifest-v*.toml
+claude/.claude/**/*.highwatermark
+claude/.claude/**/*.lock
+claude/.claude/rules/private.md
