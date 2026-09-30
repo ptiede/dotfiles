@@ -1,0 +1,197 @@
+# Catppuccin Latte for the Julia REPL
+# ---------------------------------------------------------------------------
+# Julia >= 1.13 faces.toml  (StyledStrings)
+#
+#   Install : copy to ~/.julia/config/faces.toml
+#   Reload  : restart Julia, or
+#             StyledStrings.load_customisations!(force=true)
+#
+# Palette: https://github.com/catppuccin/catppuccin  (Latte)
+#   rosewater #dc8a78   flamingo #dd7878   pink     #ea76cb
+#   mauve     #8839ef   red      #d20f39   maroon   #e64553
+#   peach     #fe640b   yellow   #df8e1d   green    #40a02b
+#   teal      #179299   sky      #04a5e5   sapphire #209fb5
+#   blue      #1e66f5   lavender #7287fd   text     #4c4f69
+#   subtext1  #5c5f77   subtext0 #6c6f85   overlay2 #7c7f93
+#   overlay1  #8c8fa1   overlay0 #9ca0b0   surface2 #acb0be
+#   surface1  #bcc0cc   surface0 #ccd0da   base     #eff1f5
+# ---------------------------------------------------------------------------
+
+
+## Basic colours -------------------------------------------------------------
+## Mirrors the official Catppuccin terminal palette, so `:red`, `:blue`, ...
+## match what a Catppuccin-themed terminal would render.
+## Note: Catppuccin maps each bright colour to its normal counterpart (except
+## black/white), so `bright_red` and `red` are intentionally identical.
+
+black          = { foreground = "#5c5f77" }
+red            = { foreground = "#d20f39" }
+green          = { foreground = "#40a02b" }
+yellow         = { foreground = "#df8e1d" }
+blue           = { foreground = "#1e66f5" }
+magenta        = { foreground = "#ea76cb" }
+cyan           = { foreground = "#179299" }
+white          = { foreground = "#acb0be" }
+
+bright_black   = { foreground = "#6c6f85" }
+bright_red     = { foreground = "#d20f39" }
+bright_green   = { foreground = "#40a02b" }
+bright_yellow  = { foreground = "#df8e1d" }
+bright_blue    = { foreground = "#1e66f5" }
+bright_magenta = { foreground = "#ea76cb" }
+bright_cyan    = { foreground = "#179299" }
+bright_white   = { foreground = "#bcc0cc" }
+
+grey           = { foreground = "#9ca0b0" }
+gray           = { foreground = "#9ca0b0" }
+
+## Uncomment to force every unstyled character to the Catppuccin foreground.
+## Left off by default so the REPL keeps using your terminal's own default
+## text colour.
+# default      = { foreground = "#4c4f69" }
+
+
+## Semantic faces ------------------------------------------------------------
+## Colours follow Catppuccin's diagnostic convention:
+##   error red / warning yellow / info sky / hint teal / ok green
+
+shadow    = { foreground = "#9ca0b0" }
+region    = { background = "#bcc0cc" }
+emphasis  = { foreground = "#1e66f5" }
+highlight = { foreground = "#eff1f5", background = "#df8e1d" }
+code      = { foreground = "#179299" }
+
+error     = { foreground = "#d20f39" }
+warning   = { foreground = "#df8e1d" }
+info      = { foreground = "#04a5e5" }
+tip       = { foreground = "#179299" }
+note      = { foreground = "#8c8fa1" }
+success   = { foreground = "#40a02b" }
+
+## Logging (@debug / @info / @warn / @error). The default `bold` weight is
+## preserved: user faces are merged into the built-ins, not replaced.
+[log]
+debug = { foreground = "#1e66f5" }
+info  = { foreground = "#04a5e5" }
+warn  = { foreground = "#df8e1d" }
+error = { foreground = "#d20f39" }
+
+
+## REPL prompts --------------------------------------------------------------
+[repl_prompt]
+foreground = "#4c4f69"
+julia = { foreground = "#40a02b" }
+pkg   = { foreground = "#1e66f5" }
+help  = { foreground = "#df8e1d" }
+shell = { foreground = "#d20f39" }
+beep  = { foreground = "#9ca0b0" }
+
+## History search (Ctrl-R, and the prefix-search hint)
+[REPL.History.search]
+prefix     = { foreground = "#8839ef" }
+hint       = { foreground = "#9ca0b0" }
+match      = { foreground = "#df8e1d" }
+results    = { foreground = "#8c8fa1" }
+selected   = { foreground = "#1e66f5" }
+unselected = { foreground = "#9ca0b0" }
+separator  = { foreground = "#acb0be" }
+
+
+## Julia syntax highlighting -------------------------------------------------
+## Token -> colour follows Catppuccin's own syntax specification.
+[julia]
+comment              = { foreground = "#7c7f93", slant = "italic" }
+
+keyword              = { foreground = "#8839ef" }    # function, if, end, ...
+# NOTE: julia_builtin also covers the short-circuit operators `&&` and `||`,
+# so those render peach rather than sky. Set this to #04a5e5 instead if you
+# would rather they read as ordinary operators.
+builtin              = { foreground = "#fe640b" }    # typeof, &&, ||, ...
+macro                = { foreground = "#ea76cb" }     # @time, @inbounds, ...
+type                 = { foreground = "#df8e1d" }   # Int64, AbstractArray
+funcall              = { foreground = "#1e66f5" }     # f(x)
+funcdef              = { foreground = "#1e66f5" }     # f in `function f(x)`
+
+number               = { foreground = "#fe640b" }
+bool                 = { foreground = "#fe640b" }
+singleton_identifier = { foreground = "#fe640b" }    # nothing, missing
+string               = { foreground = "#40a02b" }
+string_delim         = { foreground = "#40a02b" }
+char                 = { foreground = "#179299" }
+char_delim           = { foreground = "#179299" }
+cmd                  = { foreground = "#40a02b" }    # `ls -l`
+cmd_delim            = { foreground = "#40a02b" }
+regex                = { foreground = "#ea76cb" }     # r"..."
+backslash_literal    = { foreground = "#ea76cb" }     # \n, \t escapes
+symbol               = { foreground = "#dd7878" } # :foo
+
+operator             = { foreground = "#04a5e5" }
+comparator           = { foreground = "#04a5e5" }      # ==, <, >=
+broadcast            = { foreground = "#04a5e5" }      # the . in f.(x)
+typedec              = { foreground = "#04a5e5" }      # the :: in x::Int
+assignment           = { foreground = "#04a5e5" }      # the = in `x = 1`
+opassignment         = { foreground = "#04a5e5" }      # the + in `x += 1`
+
+parentheses          = { foreground = "#7c7f93" }
+error                = { foreground = "#eff1f5", background = "#d20f39" }
+# unpaired_parentheses inherits [julia_error, julia_parentheses] -- no need to set.
+
+## Stack traces
+[julia.stacktrace]
+frameindex = { foreground = "#8c8fa1" }
+basemodule = { foreground = "#8c8fa1" }
+location   = { foreground = "#9ca0b0" }
+filename   = { foreground = "#209fb5" }
+fileline   = { foreground = "#209fb5" }
+inlined    = { foreground = "#fe640b" }
+repetition = { foreground = "#df8e1d" }
+
+## Rainbow delimiters --------------------------------------------------------
+## Nesting-depth colours for (), [] and {}, cycling back to 1 past depth 6.
+## Order is Catppuccin's own rainbow: red, teal, yellow, blue, pink, flamingo.
+## Comment this block out to make every bracket a flat `julia_parentheses`.
+
+[julia.rainbow.paren]
+"1" = { foreground = "#d20f39" }
+"2" = { foreground = "#179299" }
+"3" = { foreground = "#df8e1d" }
+"4" = { foreground = "#1e66f5" }
+"5" = { foreground = "#ea76cb" }
+"6" = { foreground = "#dd7878" }
+
+[julia.rainbow.bracket]
+"1" = { foreground = "#d20f39" }
+"2" = { foreground = "#179299" }
+"3" = { foreground = "#df8e1d" }
+"4" = { foreground = "#1e66f5" }
+"5" = { foreground = "#ea76cb" }
+"6" = { foreground = "#dd7878" }
+
+[julia.rainbow.curly]
+"1" = { foreground = "#d20f39" }
+"2" = { foreground = "#179299" }
+"3" = { foreground = "#df8e1d" }
+"4" = { foreground = "#1e66f5" }
+"5" = { foreground = "#ea76cb" }
+"6" = { foreground = "#dd7878" }
+
+
+## Markdown ------------------------------------------------------------------
+## Used by REPL help mode (?foo) and any Markdown rendered to the terminal.
+[markdown]
+header       = { foreground = "#8839ef" }
+h1           = { foreground = "#8839ef" }
+h2           = { foreground = "#1e66f5" }
+h3           = { foreground = "#40a02b" }
+h4           = { foreground = "#df8e1d" }
+h5           = { foreground = "#fe640b" }
+h6           = { foreground = "#ea76cb" }
+code         = { foreground = "#179299" }
+inlinecode   = { foreground = "#179299" }
+link         = { foreground = "#1e66f5" }
+list         = { foreground = "#209fb5" }
+latex        = { foreground = "#8839ef" }
+footnote     = { foreground = "#fe640b" }
+hrule        = { foreground = "#acb0be" }
+admonition   = { foreground = "#8839ef" }
+julia_prompt = { foreground = "#40a02b" }

@@ -37,3 +37,6 @@ claude/.claude/julia-code/**/Manifest-v*.toml
 claude/.claude/**/*.highwatermark
 claude/.claude/**/*.lock
 claude/.claude/rules/private.md
+
+# Omarchy writes timestamped backups of shell.json.
+omarchy/.config/omarchy/shell.json.bak.*
